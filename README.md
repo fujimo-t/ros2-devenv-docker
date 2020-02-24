@@ -1,6 +1,6 @@
 # ROS2 development environment on Docker
 
-This runs three docker containers for ROS2 development:
+This runs three docker containers for ROS2(Eloquent) development:
 
 * RViz
   * for visualization
