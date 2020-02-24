@@ -1,0 +1,36 @@
+version: "2.3"
+services: 
+  rviz:
+    container_name: rviz
+    build: .
+    command: rviz2
+    environment:
+      - DISPLAY=:0
+      - QT_X11_NO_MITSHM=1
+    volumes: 
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - root:/root
+      
+  rqt:
+    container_name: rqt
+    build: .
+    command: rqt
+    environment:
+      - DISPLAY=:0
+      - QT_X11_NO_MITSHM=1
+    volumes: 
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - root:/root
+  terminal:
+    container_name: terminal
+    build: .
+    command: lxterminal -e "byobu"
+    environment:
+      - DISPLAY=:0
+      - QT_X11_NO_MITSHM=1
+    volumes: 
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - root:/root
+
+volumes:
+  root:
